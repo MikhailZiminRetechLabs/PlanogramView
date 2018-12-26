@@ -1,0 +1,24 @@
+PODS:
+  - Kingfisher (4.6.4)
+  - ReactiveSwift (3.1.0):
+    - Result (~> 3.2)
+  - Result (3.2.4)
+
+DEPENDENCIES:
+  - Kingfisher (~> 4.6.2)
+  - ReactiveSwift (~> 3.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Kingfisher
+    - ReactiveSwift
+    - Result
+
+SPEC CHECKSUMS:
+  Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
+  ReactiveSwift: 5b26d2e988fe0eed2daf48c4054d1de74db50184
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+
+PODFILE CHECKSUM: 343c6d39ddab95535b0d1eee991acafcaa8c6c5b
+
+COCOAPODS: 1.5.3
