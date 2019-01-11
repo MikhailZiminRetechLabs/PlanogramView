@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-		This framework need to create planogram in my project.
+		This framework need to create planogram in Retech projects.
                    DESC
 
   s.homepage     = "http://EXAMPLE/PlanogramViewFramework"
@@ -108,7 +108,13 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  s.resources = "PlanogramViewFramework/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+  s.resources = "PlanogramViewFramework/**/*.{png,jpeg,jpg,storyboard,xcassets}"
+  s.resource_bundles = {
+      'PlanogramViewFramework' => ['PlanogramViewFramework/**/ItemCollectionViewCell/*.xib', 'PlanogramViewFramework/**/ShelfTableViewCell/*.xib']
+      #,
+      #'PlanogramViewFramework' => ['PlanogramViewFramework/**/ShelfTableViewCell/*.xib']
+      
+  }
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 

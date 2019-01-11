@@ -39,7 +39,20 @@ class PlanogramTableViewAdapter: NSObject {
         
         tableView.separatorStyle = .singleLine
         tableView.tableFooterView = UIView(frame: .zero)
-        tableView.register(UINib(nibName: "ShelfTableViewCell", bundle: nil), forCellReuseIdentifier: "shelfCell")
+        
+        let podBundle = Bundle(for: self.classForCoder)
+        if let bundleURL = podBundle.url(forResource: "PlanogramViewFramework", withExtension: "bundle") {
+            if let bundle = Bundle(url: bundleURL) {
+                let cellNib = UINib(nibName: "ShelfTableViewCell", bundle: bundle)
+                tableView.register(cellNib, forCellReuseIdentifier: "ShelfTableViewCell")
+
+            } else {
+                assertionFailure("Could not load the bundle")
+            }
+
+        } else {
+            assertionFailure("Could not create a path to the bundle")
+        }
         
         model.shelfs.signal.observeValues { [weak self] in
             guard let `self` = self else { return }
@@ -109,7 +122,7 @@ extension PlanogramTableViewAdapter: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "shelfCell", for: indexPath) as? ShelfTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ShelfTableViewCell", for: indexPath) as? ShelfTableViewCell {
             cell.updateCell(for: model.shelfs.value[indexPath.row].items, planogramType: model.type)
             
             let cellModel = ShelfTableCellModel()

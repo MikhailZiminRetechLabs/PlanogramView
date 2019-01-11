@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PlanogramShelf {
+public class PlanogramShelf {
     
     var shelfNumber: Int = 0
     var items: [IPlanogramItem] = []

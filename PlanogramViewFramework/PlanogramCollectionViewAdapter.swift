@@ -37,7 +37,20 @@ class PlanogramCollectionViewAdapter: NSObject {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(UINib(nibName: "ItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemCollectionViewCell")
+        let podBundle = Bundle(for: self.classForCoder)
+        if let bundleURL = podBundle.url(forResource: "PlanogramViewFramework", withExtension: "bundle") {
+            if let bundle = Bundle(url: bundleURL) {
+                let cellNib = UINib(nibName: "ItemCollectionViewCell", bundle: bundle)
+                collectionView.register(cellNib, forCellWithReuseIdentifier: "ItemCollectionViewCell")
+                
+            } else {
+                assertionFailure("Could not load the bundle")
+            }
+            
+        } else {
+            assertionFailure("Could not create a path to the bundle")
+        }
+//        collectionView.register(UINib(nibName: "ItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemCollectionViewCell")
         
         items.signal.observeValues { [weak self] in
             guard let `self` = self else { return }
@@ -78,7 +91,7 @@ class PlanogramCollectionViewAdapter: NSObject {
                             fillColorAnimation.duration = 0.2
                             fillColorAnimation.toValue = UIColor.red.withAlphaComponent(1).cgColor
                             fillColorAnimation.repeatCount = 2
-                            fillColorAnimation.fillMode = CAMediaTimingFillMode.forwards
+                            fillColorAnimation.fillMode = kCAFillModeForwards
                             
                             fillColorAnimation.autoreverses = true
                             fillColorAnimation.isRemovedOnCompletion = false
@@ -117,7 +130,7 @@ class PlanogramCollectionViewAdapter: NSObject {
         fillColorAnimation.duration = 0.2
         fillColorAnimation.toValue = UIColor.white.withAlphaComponent(0.8).cgColor
         fillColorAnimation.repeatCount = 2
-        fillColorAnimation.fillMode = CAMediaTimingFillMode.forwards
+        fillColorAnimation.fillMode = kCAFillModeForwards
         fillColorAnimation.autoreverses = true
         fillColorAnimation.isRemovedOnCompletion = false
         view.layer.add(fillColorAnimation, forKey: "backgroundColor")

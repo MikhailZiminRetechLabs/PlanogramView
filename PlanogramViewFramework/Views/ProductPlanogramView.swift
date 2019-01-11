@@ -29,7 +29,7 @@ class ProductPlanogramView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        bringSubviewToFront(colorView)
+        bringSubview(toFront: colorView)
     }
     
     required init?(coder aDecoder: NSCoder) {

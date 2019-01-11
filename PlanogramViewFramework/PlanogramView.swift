@@ -10,12 +10,12 @@ import UIKit
 import ReactiveSwift
 
 
-enum PlanogramViewType {
+public enum PlanogramViewType {
     case normal
     case embed
 }
 
-class PlanogramView: UIView {
+open class PlanogramView: UIView {
 
     @IBOutlet fileprivate var contentView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -23,11 +23,12 @@ class PlanogramView: UIView {
     @IBOutlet weak var tableHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableTopConstraint: NSLayoutConstraint!
     
-    let model = PlanogramViewModel()
+    let _model = PlanogramViewModel()
     
     var scrollViewAdapter: ScrollViewAdapter!
     var tableViewAdapter: PlanogramTableViewAdapter!
-    let selectedItem = MutableProperty<IPlanogramItem?>(nil)
+    
+    public let selectedItem = MutableProperty<IPlanogramItem?>(nil)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,13 +53,12 @@ class PlanogramView: UIView {
     
     private func setupUI() {
         scrollViewAdapter = ScrollViewAdapter(scrollView, zoomingView: tableView)
-        tableViewAdapter = PlanogramTableViewAdapter(tableView, model: model)
+        tableViewAdapter = PlanogramTableViewAdapter(tableView, model: _model)
         
         tableViewAdapter.tableHeight.signal.observeValues { [weak self] in
             guard let `self` = self else { return }
             
             self.tableHeightConstraint.constant = $0
-//            self.tableTopConstraint.constant = (self.scrollView.frame.height - $0) / 2
             let const = (self.scrollView.frame.height - $0) / 2
             if const >= 0 {
                 self.tableTopConstraint.constant = const
@@ -85,5 +85,17 @@ class PlanogramView: UIView {
         }
         
     }
+    
+    public func setupShelfs(_ shelfs: [PlanogramShelf]) {
+        _model.shelfs.value = shelfs
+    }
+    
+    public func setupType(_ type: PlanogramViewType) {
+        _model.type = type
+    }
+    
+//    public func setupPlanogramItems(_ items: [IPlanogramItem]) {
+//
+//    }
     
 }
