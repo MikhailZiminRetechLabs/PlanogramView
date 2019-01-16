@@ -16,9 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PlanogramViewFramework"
-  s.version      = "0.1.0"
+  s.version      = "0.3.0"
   s.summary      = "Framework for planogram"
-  s.requires_arc = true
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
