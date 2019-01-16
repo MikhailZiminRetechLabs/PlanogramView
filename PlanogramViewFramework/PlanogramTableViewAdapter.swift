@@ -11,20 +11,20 @@ import UIKit
 import ReactiveSwift
 import Result
 
-class PlanogramTableViewAdapter: NSObject {
+open class PlanogramTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
     
-    var tableView: UITableView!
+    public var tableView: UITableView!
     
     var cellHeight: CGFloat = 100
     var totalElements = 0
-    var tableHeight = MutableProperty<CGFloat>(0)
+    public var tableHeight = MutableProperty<CGFloat>(0)
     
-    var model: PlanogramViewModel
+    let model: PlanogramViewModel
     
     public let itemDetailsSignal: Signal<IPlanogramItem, NoError>
-    private let itemDetailsSignalObserver: Signal<IPlanogramItem, NoError>.Observer
+    public let itemDetailsSignalObserver: Signal<IPlanogramItem, NoError>.Observer
 
-    init(_ tv: UITableView, model: PlanogramViewModel) {
+    public init(_ tv: UITableView, model: PlanogramViewModel) {
         let (itemDetailsSignal, itemDetailsSignalObserver) = Signal<IPlanogramItem, NoError>.pipe()
         self.itemDetailsSignal = itemDetailsSignal
         self.itemDetailsSignalObserver = itemDetailsSignalObserver
@@ -41,18 +41,18 @@ class PlanogramTableViewAdapter: NSObject {
         tableView.tableFooterView = UIView(frame: .zero)
         
         let podBundle = Bundle(for: self.classForCoder)
-        if let bundleURL = podBundle.url(forResource: "PlanogramViewFramework", withExtension: "bundle") {
-            if let bundle = Bundle(url: bundleURL) {
-                let cellNib = UINib(nibName: "ShelfTableViewCell", bundle: bundle)
+//        if let bundleURL = podBundle.url(forResource: "PlanogramViewFramework", withExtension: "bundle") {
+//            if let bundle = Bundle(url: bundleURL) {
+                let cellNib = UINib(nibName: "ShelfTableViewCell", bundle: podBundle)
                 tableView.register(cellNib, forCellReuseIdentifier: "ShelfTableViewCell")
 
-            } else {
-                assertionFailure("Could not load the bundle")
-            }
-
-        } else {
-            assertionFailure("Could not create a path to the bundle")
-        }
+//            } else {
+//                assertionFailure("Could not load the bundle")
+//            }
+//
+//        } else {
+//            assertionFailure("Could not create a path to the bundle")
+//        }
         
         model.shelfs.signal.observeValues { [weak self] in
             guard let `self` = self else { return }
@@ -88,25 +88,23 @@ class PlanogramTableViewAdapter: NSObject {
                 self.cellHeight = cellHeightRationScreen
             }
             
-            self.tableView.reloadData()
-            
             if self.totalElements == 0 {
                 self.totalElements = 1
             }
             
             self.tableHeight.value = CGFloat(self.totalElements) * self.cellHeight
             
+            self.tableView.reloadData()
+
+            
         }
     }
-}
-
-extension PlanogramTableViewAdapter: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.shelfs.value.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var maxItems = 0
         
         let shelf = model.shelfs.value[indexPath.row]
@@ -121,7 +119,7 @@ extension PlanogramTableViewAdapter: UITableViewDelegate, UITableViewDataSource 
         return height
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ShelfTableViewCell", for: indexPath) as? ShelfTableViewCell {
             cell.updateCell(for: model.shelfs.value[indexPath.row].items, planogramType: model.type)
             
@@ -137,5 +135,5 @@ extension PlanogramTableViewAdapter: UITableViewDelegate, UITableViewDataSource 
         
         return UITableViewCell()
     }
-    
 }
+

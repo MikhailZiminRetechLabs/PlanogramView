@@ -18,15 +18,15 @@ public enum PlanogramViewType {
 open class PlanogramView: UIView {
 
     @IBOutlet fileprivate var contentView: UIView!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var tableHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var tableTopConstraint: NSLayoutConstraint!
+    @IBOutlet public weak var scrollView: UIScrollView!
+    @IBOutlet public weak var tableView: UITableView!
+    @IBOutlet public weak var tableHeightConstraint: NSLayoutConstraint!
+    @IBOutlet public weak var tableTopConstraint: NSLayoutConstraint!
     
     let _model = PlanogramViewModel()
     
     var scrollViewAdapter: ScrollViewAdapter!
-    var tableViewAdapter: PlanogramTableViewAdapter!
+    public var tableViewAdapter: PlanogramTableViewAdapter!
     
     public let selectedItem = MutableProperty<IPlanogramItem?>(nil)
     
@@ -51,9 +51,20 @@ open class PlanogramView: UIView {
         setupUI()
     }
     
-    private func setupUI() {
+    open func setupUI() {
         scrollViewAdapter = ScrollViewAdapter(scrollView, zoomingView: tableView)
         tableViewAdapter = PlanogramTableViewAdapter(tableView, model: _model)
+        
+        scrollViewAdapter.zoomViewFrameHeight.signal.observeValues { [weak self] in
+            guard let `self` = self else { return }
+            
+            let const = (self.scrollView.frame.height - $0) / 2
+            if const >= 0 {
+                self.tableTopConstraint.constant = const
+            } else {
+                self.tableTopConstraint.constant = 0
+            }
+        }
         
         tableViewAdapter.tableHeight.signal.observeValues { [weak self] in
             guard let `self` = self else { return }
@@ -68,34 +79,19 @@ open class PlanogramView: UIView {
             self.layoutIfNeeded()
         }
         
-        
-        scrollViewAdapter.zoomViewFrameHeight.signal.observeValues { [weak self] in
-            guard let `self` = self else { return }
-            
-            let const = (self.scrollView.frame.height - $0) / 2
-            if const >= 0 {
-                self.tableTopConstraint.constant = const
-            } else {
-                self.tableTopConstraint.constant = 0
-            }
-        }
-        
         tableViewAdapter.itemDetailsSignal.observeValues { [weak self] in
             self?.selectedItem.value = $0
         }
         
     }
     
-    public func setupShelfs(_ shelfs: [PlanogramShelf]) {
-        _model.shelfs.value = shelfs
-    }
-    
     public func setupType(_ type: PlanogramViewType) {
         _model.type = type
     }
     
-//    public func setupPlanogramItems(_ items: [IPlanogramItem]) {
-//
-//    }
+    open func setupPlanogram(_ items: [IPlanogramItem]) {
+        let planogramItems = PlanogramItems(items: items)
+        _model.shelfs.value = planogramItems.shelfs
+    }
     
 }

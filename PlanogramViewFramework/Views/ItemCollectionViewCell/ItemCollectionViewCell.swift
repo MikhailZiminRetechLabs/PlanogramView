@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ItemCollectionViewCell: UICollectionViewCell {
+public class ItemCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet public weak var stackView: UIStackView!
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         
         stackView.axis = .vertical
@@ -20,7 +20,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
         stackView.distribution = .fillEqually
     }
     
-    override func prepareForReuse() {
+    override public func prepareForReuse() {
         super.prepareForReuse()
         
         for subview in stackView.arrangedSubviews {

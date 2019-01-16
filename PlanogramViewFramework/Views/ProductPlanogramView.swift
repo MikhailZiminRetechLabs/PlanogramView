@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ProductPlanogramView: UIView {
+public class ProductPlanogramView: UIView {
 
     var imageView: UIImageView!
-    var colorView: UIView!
+    public var colorView: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,7 +26,7 @@ class ProductPlanogramView: UIView {
         colorView.backgroundColor = UIColor.clear
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         bringSubview(toFront: colorView)

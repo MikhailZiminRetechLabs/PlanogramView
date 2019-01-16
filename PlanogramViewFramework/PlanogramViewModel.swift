@@ -9,9 +9,10 @@
 import Foundation
 import ReactiveSwift
 
-class PlanogramViewModel {
+open class PlanogramViewModel {
     
-    var type: PlanogramViewType = .normal
-
-    var shelfs = MutableProperty<[PlanogramShelf]>([])
+    public var type: PlanogramViewType = .normal
+    public var shelfs = MutableProperty<[PlanogramShelf]>([])
+    
+    public init() { }
 }

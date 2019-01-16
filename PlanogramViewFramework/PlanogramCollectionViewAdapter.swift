@@ -13,19 +13,19 @@ import ReactiveSwift
 import Result
 import Kingfisher
 
-class PlanogramCollectionViewAdapter: NSObject {
+open class PlanogramCollectionViewAdapter: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var collectionView: UICollectionView!
-    var planogramType: PlanogramViewType?
+    public var collectionView: UICollectionView!
+    public var planogramType: PlanogramViewType?
     
-    var items = MutableProperty<[IPlanogramItem]>([])
+    public var items = MutableProperty<[IPlanogramItem]>([])
     let selectedItem = MutableProperty<IPlanogramItem?>(nil)
     private var maxItems = 0
     
     public let itemDetailsSignal: Signal<IPlanogramItem, NoError>
     private let itemDetailsSignalObserver: Signal<IPlanogramItem, NoError>.Observer
     
-    init(_ cv: UICollectionView) {
+    public init(_ cv: UICollectionView) {
         self.collectionView = cv
         
         let (itemDetailsSignal, itemDetailsSignalObserver) = Signal<IPlanogramItem, NoError>.pipe()
@@ -37,30 +37,23 @@ class PlanogramCollectionViewAdapter: NSObject {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        let podBundle = Bundle(for: self.classForCoder)
-        if let bundleURL = podBundle.url(forResource: "PlanogramViewFramework", withExtension: "bundle") {
-            if let bundle = Bundle(url: bundleURL) {
-                let cellNib = UINib(nibName: "ItemCollectionViewCell", bundle: bundle)
-                collectionView.register(cellNib, forCellWithReuseIdentifier: "ItemCollectionViewCell")
-                
-            } else {
-                assertionFailure("Could not load the bundle")
-            }
-            
+        if let path = Bundle(for: ItemCollectionViewCell.self).path(forResource: "PlanogramViewFramework", ofType: "bundle") {
+            let podBundle = Bundle(path: path)
+
+            let cellNib = UINib(nibName: "ItemCollectionViewCell", bundle: podBundle)
+            collectionView.register(cellNib, forCellWithReuseIdentifier: "ItemCollectionViewCell")
         } else {
-            assertionFailure("Could not create a path to the bundle")
+            print("Could not create a path to the bundle")
         }
-//        collectionView.register(UINib(nibName: "ItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemCollectionViewCell")
-        
+
         items.signal.observeValues { [weak self] in
-            guard let `self` = self else { return }
             for item in $0 {
-                if self.maxItems < item.verticalFacings {
-                    self.maxItems = item.verticalFacings
+                if self!.maxItems < item.verticalFacings {
+                    self?.maxItems = item.verticalFacings
                 }
             }
             
-            self.collectionView.reloadData()
+            self?.collectionView.reloadData()
         }
         
         selectedItem.signal.skipNil().observeValues { [weak self] in
@@ -104,7 +97,7 @@ class PlanogramCollectionViewAdapter: NSObject {
         
     }
     
-    private func runBlinkViewAnimation(of planogramItems: [IPlanogramItem]) {
+    public func runBlinkViewAnimation(of planogramItems: [IPlanogramItem]) {
         planogramItems.forEach { currentItem in
             if let index = self.items.value.firstIndex(where: { currentItem.position == $0.position }) {
                 let indexPath = IndexPath(item: index, section: 0)
@@ -136,16 +129,12 @@ class PlanogramCollectionViewAdapter: NSObject {
         view.layer.add(fillColorAnimation, forKey: "backgroundColor")
         
     }
-}
-
-
-extension PlanogramCollectionViewAdapter: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-        
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.value.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
         let item = items.value[indexPath.row]
         
@@ -180,54 +169,53 @@ extension PlanogramCollectionViewAdapter: UICollectionViewDelegate, UICollection
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {      
         return CGSize(width: collectionView.frame.width / CGFloat(items.value.count),
                       height: collectionView.frame.height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = items.value[indexPath.row]
-
+        
         itemDetailsSignalObserver.send(value: item)
         
         let blinkedItems = items.value.map { $0 }.filter { $0.groupHashId == item.groupHashId }
         runBlinkViewAnimation(of: blinkedItems)
-
         
         
-//        if missingProducts.value.count > 0 {
-//            if (missingProducts.value.map { $0.id }.contains(item.id)) {
-//                self.selectedItem.value = item
-//
-//                ScreenRouter.shared.currentViewController?.present(.planogramItemDetail(itemId: item.id),
-//                                                                   transitioningDelegate: transitionDelegate,
-//                                                                   interactor: transitionDelegate.interactor,
-//                                                                   force: true)
-//            }
-//
-//
-//            return
-//        }
-//
-//
-//        if let type = planogramType, type == .normal ||
-//            (ScreenRouter.shared.currentViewController as? ComplianceVC)?.type == .normal {
-//            ScreenRouter.shared.currentViewController?.present(.planogramItemDetail(itemId: item.id),
-//                                                         transitioningDelegate: transitionDelegate,
-//                                                         interactor: transitionDelegate.interactor,
-//                                                         force: true)
-//
-//
-//
-//            let blinkedItems = items.value.map { $0 }.filter { $0.groupHashId == item.groupHashId }
-//            runBlinkViewAnimation(of: blinkedItems)
-//        } else {
-//            itemDetailsSignalObserver.send(value: item)
-//
-//            let blinkedItems = actionReportItemsByUpcs.map { $0.value }.filter { $0.planogramItem?.groupHashId == item.groupHashId }.filter { $0.planogramItem != nil } .map { $0.planogramItem! }
-//            runBlinkViewAnimation(of: blinkedItems)
-//        }
+        
+        //        if missingProducts.value.count > 0 {
+        //            if (missingProducts.value.map { $0.id }.contains(item.id)) {
+        //                self.selectedItem.value = item
+        //
+        //                ScreenRouter.shared.currentViewController?.present(.planogramItemDetail(itemId: item.id),
+        //                                                                   transitioningDelegate: transitionDelegate,
+        //                                                                   interactor: transitionDelegate.interactor,
+        //                                                                   force: true)
+        //            }
+        //
+        //
+        //            return
+        //        }
+        //
+        //
+        //        if let type = planogramType, type == .normal ||
+        //            (ScreenRouter.shared.currentViewController as? ComplianceVC)?.type == .normal {
+        //            ScreenRouter.shared.currentViewController?.present(.planogramItemDetail(itemId: item.id),
+        //                                                         transitioningDelegate: transitionDelegate,
+        //                                                         interactor: transitionDelegate.interactor,
+        //                                                         force: true)
+        //
+        //
+        //
+        //            let blinkedItems = items.value.map { $0 }.filter { $0.groupHashId == item.groupHashId }
+        //            runBlinkViewAnimation(of: blinkedItems)
+        //        } else {
+        //            itemDetailsSignalObserver.send(value: item)
+        //
+        //            let blinkedItems = actionReportItemsByUpcs.map { $0.value }.filter { $0.planogramItem?.groupHashId == item.groupHashId }.filter { $0.planogramItem != nil } .map { $0.planogramItem! }
+        //            runBlinkViewAnimation(of: blinkedItems)
+        //        }
         
     }
 }

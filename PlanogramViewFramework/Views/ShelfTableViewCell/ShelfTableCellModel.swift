@@ -10,18 +10,18 @@ import Foundation
 import ReactiveSwift
 import Result
 
-class ShelfTableCellModel {
+open class ShelfTableCellModel {
     
     public let itemDetailsSignal: Signal<IPlanogramItem, NoError>
     private let itemDetailsSignalObserver: Signal<IPlanogramItem, NoError>.Observer
 
-    init() {
+    public init() {
         let (itemDetailsSignal, itemDetailsSignalObserver) = Signal<IPlanogramItem, NoError>.pipe()
         self.itemDetailsSignal = itemDetailsSignal
         self.itemDetailsSignalObserver = itemDetailsSignalObserver
     }
     
-    func select(item: IPlanogramItem) {
+    public func select(item: IPlanogramItem) {
         self.itemDetailsSignalObserver.send(value: item)
     }
 }

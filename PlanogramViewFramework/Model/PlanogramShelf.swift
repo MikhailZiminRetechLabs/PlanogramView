@@ -11,5 +11,5 @@ import Foundation
 public class PlanogramShelf {
     
     var shelfNumber: Int = 0
-    var items: [IPlanogramItem] = []
+    public var items: [IPlanogramItem] = []
 }
