@@ -37,8 +37,7 @@ open class ShelfTableViewCell: UITableViewCell {
         }
     }
 
-    public func updateCell(for items: [IPlanogramItem], planogramType: PlanogramViewType) {
-        collectionViewAdapter?.planogramType = planogramType
+    public func updateCell(for items: [IPlanogramItem]) {
         collectionViewAdapter?.items.value = items
     }
     

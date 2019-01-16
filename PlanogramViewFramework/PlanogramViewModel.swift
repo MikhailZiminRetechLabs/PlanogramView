@@ -11,7 +11,6 @@ import ReactiveSwift
 
 open class PlanogramViewModel {
     
-    public var type: PlanogramViewType = .normal
     public var shelfs = MutableProperty<[PlanogramShelf]>([])
     
     public init() { }

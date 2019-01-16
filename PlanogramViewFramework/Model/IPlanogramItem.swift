@@ -14,7 +14,5 @@ import Foundation
     var position: Int { get set }
     var verticalFacings: Int { get set }
     
-    @objc optional var product: IProduct { get set }
-    
-    var groupHashId: String { get }
+    @objc optional var product: IProduct { get set }    
 }

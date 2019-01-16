@@ -9,12 +9,6 @@
 import UIKit
 import ReactiveSwift
 
-
-public enum PlanogramViewType {
-    case normal
-    case embed
-}
-
 open class PlanogramView: UIView {
 
     @IBOutlet fileprivate var contentView: UIView!
@@ -83,10 +77,6 @@ open class PlanogramView: UIView {
             self?.selectedItem.value = $0
         }
         
-    }
-    
-    public func setupType(_ type: PlanogramViewType) {
-        _model.type = type
     }
     
     open func setupPlanogram(_ items: [IPlanogramItem]) {

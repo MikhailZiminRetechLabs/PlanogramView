@@ -16,8 +16,9 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PlanogramViewFramework"
-  s.version      = "0.0.1"
+  s.version      = "0.1.0"
   s.summary      = "Framework for planogram"
+  s.requires_arc = true
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -28,7 +29,7 @@ Pod::Spec.new do |s|
 		This framework need to create planogram in Retech projects.
                    DESC
 
-  s.homepage     = "http://EXAMPLE/PlanogramViewFramework"
+  s.homepage     = "https://github.com/MikhailZiminRetechLabs/PlanogramView"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -39,8 +40,8 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  # s.license      = "MIT"
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -66,6 +67,7 @@ Pod::Spec.new do |s|
 
   # s.platform     = :ios
   s.platform     = :ios, "11.0"
+  s.swift_version = "4.2"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -80,9 +82,9 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  #. s.source       = { :git => "http://EXAMPLE/PlanogramViewFramework.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/MikhailZiminRetechLabs/PlanogramView.git", :tag => "#{s.version}" }
 
-  s.source       = { :path => '.' }
+  #. s.source       = { :path => '.' }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

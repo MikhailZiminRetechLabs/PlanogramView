@@ -40,19 +40,14 @@ open class PlanogramTableViewAdapter: NSObject, UITableViewDelegate, UITableView
         tableView.separatorStyle = .singleLine
         tableView.tableFooterView = UIView(frame: .zero)
         
-        let podBundle = Bundle(for: self.classForCoder)
-//        if let bundleURL = podBundle.url(forResource: "PlanogramViewFramework", withExtension: "bundle") {
-//            if let bundle = Bundle(url: bundleURL) {
-                let cellNib = UINib(nibName: "ShelfTableViewCell", bundle: podBundle)
-                tableView.register(cellNib, forCellReuseIdentifier: "ShelfTableViewCell")
-
-//            } else {
-//                assertionFailure("Could not load the bundle")
-//            }
-//
-//        } else {
-//            assertionFailure("Could not create a path to the bundle")
-//        }
+        if let path = Bundle(for: ShelfTableViewCell.self).path(forResource: "PlanogramViewFramework", ofType: "bundle") {
+            let podBundle = Bundle(path: path)
+            
+            let cellNib = UINib(nibName: "ShelfTableViewCell", bundle: podBundle)
+            tableView.register(cellNib, forCellReuseIdentifier: "ShelfTableViewCell")
+        } else {
+            print("Could not create a path to the bundle")
+        }
         
         model.shelfs.signal.observeValues { [weak self] in
             guard let `self` = self else { return }
@@ -121,7 +116,7 @@ open class PlanogramTableViewAdapter: NSObject, UITableViewDelegate, UITableView
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ShelfTableViewCell", for: indexPath) as? ShelfTableViewCell {
-            cell.updateCell(for: model.shelfs.value[indexPath.row].items, planogramType: model.type)
+            cell.updateCell(for: model.shelfs.value[indexPath.row].items)
             
             let cellModel = ShelfTableCellModel()
             cellModel.itemDetailsSignal.observeValues { [weak self] in

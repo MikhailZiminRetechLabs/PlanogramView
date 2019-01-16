@@ -16,7 +16,6 @@ import Kingfisher
 open class PlanogramCollectionViewAdapter: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     public var collectionView: UICollectionView!
-    public var planogramType: PlanogramViewType?
     
     public var items = MutableProperty<[IPlanogramItem]>([])
     let selectedItem = MutableProperty<IPlanogramItem?>(nil)
@@ -55,79 +54,6 @@ open class PlanogramCollectionViewAdapter: NSObject, UICollectionViewDelegate, U
             
             self?.collectionView.reloadData()
         }
-        
-        selectedItem.signal.skipNil().observeValues { [weak self] in
-            guard let `self` = self else { return }
-            
-            let item = $0
-            let groupedItems = self.items.value.filter { $0.groupHashId == item.groupHashId }
-            
-            groupedItems.forEach { currentItem in
-                if let index = self.items.value.firstIndex(where: { currentItem.position == $0.position }) {
-                    let indexPath = IndexPath(item: index, section: 0)
-                    if let cell = self.collectionView.cellForItem(at: indexPath) as? ItemCollectionViewCell {
-                        
-                        var imageViews = [] as [UIView]
-                        cell.stackView.arrangedSubviews.forEach {
-                            if let productView = $0 as? ProductPlanogramView {
-                                imageViews.append(productView.colorView)
-                            }
-//                            else if let imageView = $0 as? UIImageView {
-//                                imageViews.append(imageView)
-//                            }
-                        }
-                        
-                        
-                        
-                        imageViews.forEach {
-                            let fillColorAnimation = CABasicAnimation(keyPath: "backgroundColor")
-                            fillColorAnimation.duration = 0.2
-                            fillColorAnimation.toValue = UIColor.red.withAlphaComponent(1).cgColor
-                            fillColorAnimation.repeatCount = 2
-                            fillColorAnimation.fillMode = kCAFillModeForwards
-                            
-                            fillColorAnimation.autoreverses = true
-                            fillColorAnimation.isRemovedOnCompletion = false
-                            $0.layer.add(fillColorAnimation, forKey: "backgroundColor")
-                        }
-                    }
-                }
-            }
-        }
-        
-    }
-    
-    public func runBlinkViewAnimation(of planogramItems: [IPlanogramItem]) {
-        planogramItems.forEach { currentItem in
-            if let index = self.items.value.firstIndex(where: { currentItem.position == $0.position }) {
-                let indexPath = IndexPath(item: index, section: 0)
-                if let cell = self.collectionView.cellForItem(at: indexPath) as? ItemCollectionViewCell {
-                    
-                    var imageViews = [] as [UIView]
-                    cell.stackView.arrangedSubviews.forEach {
-                        if let productView = $0 as? ProductPlanogramView {
-                            imageViews.append(productView.colorView)
-                        }
-                    }
-                    
-                    imageViews.forEach {
-                        self.runBlinkViewAnimation(of: $0)
-                    }
-                }
-            }
-        }
-    }
-    
-    private func runBlinkViewAnimation(of view: UIView) {
-        let fillColorAnimation = CABasicAnimation(keyPath: "backgroundColor")
-        fillColorAnimation.duration = 0.2
-        fillColorAnimation.toValue = UIColor.white.withAlphaComponent(0.8).cgColor
-        fillColorAnimation.repeatCount = 2
-        fillColorAnimation.fillMode = kCAFillModeForwards
-        fillColorAnimation.autoreverses = true
-        fillColorAnimation.isRemovedOnCompletion = false
-        view.layer.add(fillColorAnimation, forKey: "backgroundColor")
-        
     }
     
     open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -178,44 +104,5 @@ open class PlanogramCollectionViewAdapter: NSObject, UICollectionViewDelegate, U
         let item = items.value[indexPath.row]
         
         itemDetailsSignalObserver.send(value: item)
-        
-        let blinkedItems = items.value.map { $0 }.filter { $0.groupHashId == item.groupHashId }
-        runBlinkViewAnimation(of: blinkedItems)
-        
-        
-        
-        //        if missingProducts.value.count > 0 {
-        //            if (missingProducts.value.map { $0.id }.contains(item.id)) {
-        //                self.selectedItem.value = item
-        //
-        //                ScreenRouter.shared.currentViewController?.present(.planogramItemDetail(itemId: item.id),
-        //                                                                   transitioningDelegate: transitionDelegate,
-        //                                                                   interactor: transitionDelegate.interactor,
-        //                                                                   force: true)
-        //            }
-        //
-        //
-        //            return
-        //        }
-        //
-        //
-        //        if let type = planogramType, type == .normal ||
-        //            (ScreenRouter.shared.currentViewController as? ComplianceVC)?.type == .normal {
-        //            ScreenRouter.shared.currentViewController?.present(.planogramItemDetail(itemId: item.id),
-        //                                                         transitioningDelegate: transitionDelegate,
-        //                                                         interactor: transitionDelegate.interactor,
-        //                                                         force: true)
-        //
-        //
-        //
-        //            let blinkedItems = items.value.map { $0 }.filter { $0.groupHashId == item.groupHashId }
-        //            runBlinkViewAnimation(of: blinkedItems)
-        //        } else {
-        //            itemDetailsSignalObserver.send(value: item)
-        //
-        //            let blinkedItems = actionReportItemsByUpcs.map { $0.value }.filter { $0.planogramItem?.groupHashId == item.groupHashId }.filter { $0.planogramItem != nil } .map { $0.planogramItem! }
-        //            runBlinkViewAnimation(of: blinkedItems)
-        //        }
-        
     }
 }
