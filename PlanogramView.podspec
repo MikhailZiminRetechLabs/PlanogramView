@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PlanogramView"
-  s.version      = "0.1.0"
+  s.version      = "0.5.0"
   s.summary      = "Framework for planogram"
 
   # This description is used to generate tags and improve search results.
@@ -111,7 +111,7 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   s.resources = "PlanogramViewFramework/**/*.{png,jpeg,jpg,storyboard,xcassets}"
   s.resource_bundles = {
-      'PlanogramViewFramework' => ['PlanogramViewFramework/**/ItemCollectionViewCell/*.xib', 'PlanogramViewFramework/**/ShelfTableViewCell/*.xib']
+      'PlanogramView' => ['PlanogramViewFramework/**/ItemCollectionViewCell/*.xib', 'PlanogramViewFramework/**/ShelfTableViewCell/*.xib']
       #,
       #'PlanogramViewFramework' => ['PlanogramViewFramework/**/ShelfTableViewCell/*.xib']
       
