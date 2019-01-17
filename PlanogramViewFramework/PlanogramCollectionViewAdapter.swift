@@ -36,7 +36,7 @@ open class PlanogramCollectionViewAdapter: NSObject, UICollectionViewDelegate, U
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        if let path = Bundle(for: ItemCollectionViewCell.self).path(forResource: "PlanogramViewFramework", ofType: "bundle") {
+        if let path = Bundle(for: ItemCollectionViewCell.self).path(forResource: "PlanogramView", ofType: "bundle") {
             let podBundle = Bundle(path: path)
 
             let cellNib = UINib(nibName: "ItemCollectionViewCell", bundle: podBundle)

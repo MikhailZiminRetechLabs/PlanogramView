@@ -40,7 +40,7 @@ open class PlanogramTableViewAdapter: NSObject, UITableViewDelegate, UITableView
         tableView.separatorStyle = .singleLine
         tableView.tableFooterView = UIView(frame: .zero)
         
-        if let path = Bundle(for: ShelfTableViewCell.self).path(forResource: "PlanogramViewFramework", ofType: "bundle") {
+        if let path = Bundle(for: ShelfTableViewCell.self).path(forResource: "PlanogramView", ofType: "bundle") {
             let podBundle = Bundle(path: path)
             
             let cellNib = UINib(nibName: "ShelfTableViewCell", bundle: podBundle)
