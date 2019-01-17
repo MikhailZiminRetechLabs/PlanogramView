@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "PlanogramViewFramework"
-  s.version      = "0.3.0"
+  s.name         = "PlanogramView"
+  s.version      = "0.1.0"
   s.summary      = "Framework for planogram"
 
   # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-		This framework need to create planogram in Retech projects.
+		This framework need to create planogram in RetechLabs projects.
                    DESC
 
   s.homepage     = "https://github.com/MikhailZiminRetechLabs/PlanogramView"
@@ -126,7 +126,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework  = "UIKit", "Foundation"
+  s.framework  = "UIKit"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
