@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1E5449FA32FC0A4DA9CA7E22 /* libPods-PlanogramViewFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C69EA43FF21B1A7DBAC5BA6F /* libPods-PlanogramViewFramework.a */; };
+		2F6BBB63221D30C800B58F1A /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6BBB62221D30C800B58F1A /* ItemCollectionViewCell.swift */; };
+		2F6BBB65221D30DC00B58F1A /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6BBB64221D30DC00B58F1A /* ItemCollectionViewCell.xib */; };
+		2F6BBB69221D30ED00B58F1A /* ShelfTableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6BBB66221D30ED00B58F1A /* ShelfTableCellModel.swift */; };
+		2F6BBB6A221D30ED00B58F1A /* ShelfTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6BBB67221D30ED00B58F1A /* ShelfTableViewCell.swift */; };
+		2F6BBB6B221D30ED00B58F1A /* ShelfTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6BBB68221D30ED00B58F1A /* ShelfTableViewCell.xib */; };
+		2F991CA2221D312F0009C5EA /* PlanogramItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F991CA1221D312F0009C5EA /* PlanogramItems.swift */; };
 		2FCC11F121D32BF600B08E5D /* PlanogramViewFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FCC11EF21D32BF600B08E5D /* PlanogramViewFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FCC120A21D32C4700B08E5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FCC11F721D32C4600B08E5D /* Assets.xcassets */; };
 		2FCC120B21D32C4700B08E5D /* PlanogramCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC11F821D32C4600B08E5D /* PlanogramCollectionViewAdapter.swift */; };
 		2FCC120C21D32C4700B08E5D /* PlanogramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC11F921D32C4600B08E5D /* PlanogramViewModel.swift */; };
-		2FCC120D21D32C4700B08E5D /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC11FB21D32C4600B08E5D /* ItemCollectionViewCell.swift */; };
-		2FCC120E21D32C4700B08E5D /* ShelfTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC11FC21D32C4600B08E5D /* ShelfTableViewCell.swift */; };
-		2FCC120F21D32C4700B08E5D /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCC11FD21D32C4600B08E5D /* ItemCollectionViewCell.xib */; };
-		2FCC121021D32C4700B08E5D /* ShelfTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCC11FE21D32C4600B08E5D /* ShelfTableViewCell.xib */; };
 		2FCC121121D32C4700B08E5D /* ProductPlanogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC11FF21D32C4600B08E5D /* ProductPlanogramView.swift */; };
-		2FCC121221D32C4700B08E5D /* ShelfTableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC120021D32C4600B08E5D /* ShelfTableCellModel.swift */; };
 		2FCC121321D32C4700B08E5D /* IPlanogramItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC120221D32C4600B08E5D /* IPlanogramItem.swift */; };
 		2FCC121421D32C4700B08E5D /* PlanogramShelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC120321D32C4600B08E5D /* PlanogramShelf.swift */; };
 		2FCC121521D32C4700B08E5D /* IProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC120421D32C4600B08E5D /* IProduct.swift */; };
-		2FCC121621D32C4700B08E5D /* Planogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC120521D32C4600B08E5D /* Planogram.swift */; };
 		2FCC121721D32C4700B08E5D /* PlanogramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCC120621D32C4600B08E5D /* PlanogramView.xib */; };
 		2FCC121821D32C4700B08E5D /* PlanogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC120721D32C4600B08E5D /* PlanogramView.swift */; };
 		2FCC121921D32C4700B08E5D /* ScrollViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC120821D32C4600B08E5D /* ScrollViewAdapter.swift */; };
@@ -29,22 +29,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F6BBB62221D30C800B58F1A /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCollectionViewCell.swift; path = ItemCollectionViewCell/ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F6BBB64221D30DC00B58F1A /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemCollectionViewCell.xib; path = ItemCollectionViewCell/ItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		2F6BBB66221D30ED00B58F1A /* ShelfTableCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShelfTableCellModel.swift; path = ShelfTableViewCell/ShelfTableCellModel.swift; sourceTree = "<group>"; };
+		2F6BBB67221D30ED00B58F1A /* ShelfTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShelfTableViewCell.swift; path = ShelfTableViewCell/ShelfTableViewCell.swift; sourceTree = "<group>"; };
+		2F6BBB68221D30ED00B58F1A /* ShelfTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShelfTableViewCell.xib; path = ShelfTableViewCell/ShelfTableViewCell.xib; sourceTree = "<group>"; };
+		2F991CA1221D312F0009C5EA /* PlanogramItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanogramItems.swift; sourceTree = "<group>"; };
 		2FCC11EC21D32BF600B08E5D /* PlanogramViewFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlanogramViewFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FCC11EF21D32BF600B08E5D /* PlanogramViewFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlanogramViewFramework.h; sourceTree = "<group>"; };
 		2FCC11F021D32BF600B08E5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FCC11F721D32C4600B08E5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FCC11F821D32C4600B08E5D /* PlanogramCollectionViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanogramCollectionViewAdapter.swift; sourceTree = "<group>"; };
 		2FCC11F921D32C4600B08E5D /* PlanogramViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanogramViewModel.swift; sourceTree = "<group>"; };
-		2FCC11FB21D32C4600B08E5D /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
-		2FCC11FC21D32C4600B08E5D /* ShelfTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShelfTableViewCell.swift; sourceTree = "<group>"; };
-		2FCC11FD21D32C4600B08E5D /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
-		2FCC11FE21D32C4600B08E5D /* ShelfTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShelfTableViewCell.xib; sourceTree = "<group>"; };
 		2FCC11FF21D32C4600B08E5D /* ProductPlanogramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductPlanogramView.swift; sourceTree = "<group>"; };
-		2FCC120021D32C4600B08E5D /* ShelfTableCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShelfTableCellModel.swift; sourceTree = "<group>"; };
 		2FCC120221D32C4600B08E5D /* IPlanogramItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPlanogramItem.swift; sourceTree = "<group>"; };
 		2FCC120321D32C4600B08E5D /* PlanogramShelf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanogramShelf.swift; sourceTree = "<group>"; };
 		2FCC120421D32C4600B08E5D /* IProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IProduct.swift; sourceTree = "<group>"; };
-		2FCC120521D32C4600B08E5D /* Planogram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planogram.swift; sourceTree = "<group>"; };
 		2FCC120621D32C4600B08E5D /* PlanogramView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanogramView.xib; sourceTree = "<group>"; };
 		2FCC120721D32C4600B08E5D /* PlanogramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanogramView.swift; sourceTree = "<group>"; };
 		2FCC120821D32C4600B08E5D /* ScrollViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewAdapter.swift; sourceTree = "<group>"; };
@@ -105,12 +105,12 @@
 		2FCC11FA21D32C4600B08E5D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2FCC11FB21D32C4600B08E5D /* ItemCollectionViewCell.swift */,
-				2FCC11FC21D32C4600B08E5D /* ShelfTableViewCell.swift */,
-				2FCC11FD21D32C4600B08E5D /* ItemCollectionViewCell.xib */,
-				2FCC11FE21D32C4600B08E5D /* ShelfTableViewCell.xib */,
+				2F6BBB66221D30ED00B58F1A /* ShelfTableCellModel.swift */,
+				2F6BBB67221D30ED00B58F1A /* ShelfTableViewCell.swift */,
+				2F6BBB68221D30ED00B58F1A /* ShelfTableViewCell.xib */,
+				2F6BBB64221D30DC00B58F1A /* ItemCollectionViewCell.xib */,
+				2F6BBB62221D30C800B58F1A /* ItemCollectionViewCell.swift */,
 				2FCC11FF21D32C4600B08E5D /* ProductPlanogramView.swift */,
-				2FCC120021D32C4600B08E5D /* ShelfTableCellModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,7 +121,7 @@
 				2FCC120221D32C4600B08E5D /* IPlanogramItem.swift */,
 				2FCC120321D32C4600B08E5D /* PlanogramShelf.swift */,
 				2FCC120421D32C4600B08E5D /* IProduct.swift */,
-				2FCC120521D32C4600B08E5D /* Planogram.swift */,
+				2F991CA1221D312F0009C5EA /* PlanogramItems.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,10 +213,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6BBB6B221D30ED00B58F1A /* ShelfTableViewCell.xib in Resources */,
 				2FCC120A21D32C4700B08E5D /* Assets.xcassets in Resources */,
-				2FCC120F21D32C4700B08E5D /* ItemCollectionViewCell.xib in Resources */,
+				2F6BBB65221D30DC00B58F1A /* ItemCollectionViewCell.xib in Resources */,
 				2FCC121721D32C4700B08E5D /* PlanogramView.xib in Resources */,
-				2FCC121021D32C4700B08E5D /* ShelfTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,19 +248,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FCC120E21D32C4700B08E5D /* ShelfTableViewCell.swift in Sources */,
 				2FCC121921D32C4700B08E5D /* ScrollViewAdapter.swift in Sources */,
 				2FCC121321D32C4700B08E5D /* IPlanogramItem.swift in Sources */,
+				2F6BBB6A221D30ED00B58F1A /* ShelfTableViewCell.swift in Sources */,
 				2FCC121421D32C4700B08E5D /* PlanogramShelf.swift in Sources */,
+				2F991CA2221D312F0009C5EA /* PlanogramItems.swift in Sources */,
 				2FCC121A21D32C4700B08E5D /* PlanogramTableViewAdapter.swift in Sources */,
 				2FCC121121D32C4700B08E5D /* ProductPlanogramView.swift in Sources */,
-				2FCC120D21D32C4700B08E5D /* ItemCollectionViewCell.swift in Sources */,
 				2FCC120C21D32C4700B08E5D /* PlanogramViewModel.swift in Sources */,
 				2FCC121521D32C4700B08E5D /* IProduct.swift in Sources */,
-				2FCC121621D32C4700B08E5D /* Planogram.swift in Sources */,
 				2FCC121821D32C4700B08E5D /* PlanogramView.swift in Sources */,
 				2FCC120B21D32C4700B08E5D /* PlanogramCollectionViewAdapter.swift in Sources */,
-				2FCC121221D32C4700B08E5D /* ShelfTableCellModel.swift in Sources */,
+				2F6BBB63221D30C800B58F1A /* ItemCollectionViewCell.swift in Sources */,
+				2F6BBB69221D30ED00B58F1A /* ShelfTableCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
