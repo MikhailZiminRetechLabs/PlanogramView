@@ -81,8 +81,8 @@ open class PlanogramCollectionViewAdapter: NSObject, UICollectionViewDelegate, U
             productView.imageView.contentMode = .scaleAspectFit
             if let product = item.product {
                 if let imageURL = product.imageUrl {
-                    productView.imageView.kf.setImage(with: imageURL, placeholder: nil, options: [.targetCache(.init(name: "cache"))], progressBlock: nil) { (image, error, cacheType, url) in
-                    }
+                    let resource = ImageResource(downloadURL: imageURL, cacheKey: imageURL.lastPathComponent)
+                    productView.imageView.kf.setImage(with: resource)
                 } else {
                     productView.imageView.backgroundColor = UIColor.gray
                     productView.imageView.image = UIImage(named: "ic_no_planogram_image")
