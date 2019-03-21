@@ -29,7 +29,10 @@ class ScrollViewAdapter: NSObject {
         scroll.maximumZoomScale = 6.0
         scroll.isUserInteractionEnabled = true
         
-        scroll.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "planogram_background"))
+        if let image = UIImage(named: "planogram_background") {
+            scroll.backgroundColor = UIColor(patternImage: image)
+        }
+        //        scroll.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "planogram_background"))
     }
 }
 

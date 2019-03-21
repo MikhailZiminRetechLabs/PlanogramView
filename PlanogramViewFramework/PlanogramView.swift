@@ -37,7 +37,18 @@ open class PlanogramView: UIView {
     }
     
     private func commonInit () {
-        Bundle(for: PlanogramView.self).loadNibNamed("PlanogramView", owner: self, options: nil)
+        if let path = Bundle(for: PlanogramView.self).path(forResource: "PlanogramView", ofType: "bundle") {
+            let podBundle = Bundle(path: path)
+            
+            let viewNib = UINib(nibName: "PlanogramView", bundle: podBundle)
+            if let view = viewNib.instantiate(withOwner: self, options: nil).first as? UIView {
+                self.contentView = view
+            } else {
+                print("Counld not create a view")
+            }
+        } else {
+            print("Could not create a path to the bundle")
+        }
         
         addSubview(contentView)
         contentView.frame = self.bounds
