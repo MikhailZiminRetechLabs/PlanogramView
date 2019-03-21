@@ -8,11 +8,11 @@
 
 import Foundation
 
-public protocol IPlanogramItem {
+@objc public protocol IPlanogramItem {
     
     var shelf: Int { get set }
     var position: Int { get set }
     var verticalFacings: Int { get set }
     
-    var _product: IProduct? { get }
+    @objc optional var product: IProduct { get set }    
 }

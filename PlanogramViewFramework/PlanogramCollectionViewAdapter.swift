@@ -79,7 +79,7 @@ open class PlanogramCollectionViewAdapter: NSObject, UICollectionViewDelegate, U
             
             let productView = ProductPlanogramView(frame: CGRect(x: 0, y: 0, width: width, height: height))
             productView.imageView.contentMode = .scaleAspectFit
-            if let product = item._product {
+            if let product = item.product {
                 if let imageURL = product.imageUrl {
                     let resource = ImageResource(downloadURL: imageURL, cacheKey: imageURL.lastPathComponent)
                     productView.imageView.kf.setImage(with: resource)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol IProduct {
+@objc public protocol IProduct {
     
     var smallImage: String? { get set }
     var upc: String  { get set }
