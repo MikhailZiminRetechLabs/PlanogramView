@@ -10,7 +10,7 @@ import UIKit
 import ReactiveSwift
 
 open class PlanogramView: UIView {
-
+    
     @IBOutlet fileprivate var contentView: UIView!
     @IBOutlet public weak var scrollView: UIScrollView!
     @IBOutlet public weak var tableView: UITableView!
@@ -37,7 +37,8 @@ open class PlanogramView: UIView {
     }
     
     private func commonInit () {
-        Bundle.main.loadNibNamed("PlanogramView", owner: self, options: nil)
+        Bundle(for: PlanogramView.self).loadNibNamed("PlanogramView", owner: self, options: nil)
+        
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]

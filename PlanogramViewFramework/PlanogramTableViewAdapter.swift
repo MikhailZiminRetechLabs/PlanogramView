@@ -16,6 +16,7 @@ open class PlanogramTableViewAdapter: NSObject, UITableViewDelegate, UITableView
     public var tableView: UITableView!
     
     var cellHeight: CGFloat = 100
+    var maxItemsShelfs = 0
     var totalElements = 0
     public var tableHeight = MutableProperty<CGFloat>(0)
     
@@ -23,7 +24,7 @@ open class PlanogramTableViewAdapter: NSObject, UITableViewDelegate, UITableView
     
     public let itemDetailsSignal: Signal<IPlanogramItem, NoError>
     public let itemDetailsSignalObserver: Signal<IPlanogramItem, NoError>.Observer
-
+    
     public init(_ tv: UITableView, model: PlanogramViewModel) {
         let (itemDetailsSignal, itemDetailsSignalObserver) = Signal<IPlanogramItem, NoError>.pipe()
         self.itemDetailsSignal = itemDetailsSignal
@@ -53,8 +54,7 @@ open class PlanogramTableViewAdapter: NSObject, UITableViewDelegate, UITableView
             guard let `self` = self else { return }
             
             self.totalElements = 0
-            self.cellHeight = 100
-            var maxItemsShelfs = 0
+            self.maxItemsShelfs = 0
             
             for shelf in $0 {
                 var maxItems = 0
@@ -64,34 +64,35 @@ open class PlanogramTableViewAdapter: NSObject, UITableViewDelegate, UITableView
                         maxItems = item.verticalFacings
                     }
                 }
-                if maxItemsShelfs < shelf.items.count {
-                    maxItemsShelfs = shelf.items.count
+                if self.maxItemsShelfs < shelf.items.count {
+                    self.maxItemsShelfs = shelf.items.count
                 }
                 
                 self.totalElements += maxItems
             }
             
-            if (maxItemsShelfs == 0) {
-                maxItemsShelfs = 1
-            }
-            
-            let tableRation = CGFloat(self.totalElements) / CGFloat(maxItemsShelfs)
-            self.cellHeight *= tableRation
-            
-            let cellHeightRationScreen = self.tableView.frame.size.height / CGFloat(self.totalElements)
-            if cellHeightRationScreen < self.cellHeight {
-                self.cellHeight = cellHeightRationScreen
+            if self.maxItemsShelfs == 0 {
+                self.maxItemsShelfs = 1
             }
             
             if self.totalElements == 0 {
                 self.totalElements = 1
             }
             
+            self.cellHeight = UIScreen.main.bounds.width / CGFloat(self.maxItemsShelfs)
+            
+            let cellHeightRatioScreen = (UIScreen.main.bounds.height - 100) / CGFloat(self.totalElements)
+            if cellHeightRatioScreen < self.cellHeight {
+                self.cellHeight = cellHeightRatioScreen
+            }
+            
+            if self.cellHeight > 150 {
+                self.cellHeight = 150
+            }
+            
             self.tableHeight.value = CGFloat(self.totalElements) * self.cellHeight
             
             self.tableView.reloadData()
-
-            
         }
     }
     

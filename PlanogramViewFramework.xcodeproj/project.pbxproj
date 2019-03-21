@@ -45,7 +45,7 @@
 		2FCC120221D32C4600B08E5D /* IPlanogramItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPlanogramItem.swift; sourceTree = "<group>"; };
 		2FCC120321D32C4600B08E5D /* PlanogramShelf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanogramShelf.swift; sourceTree = "<group>"; };
 		2FCC120421D32C4600B08E5D /* IProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IProduct.swift; sourceTree = "<group>"; };
-		2FCC120621D32C4600B08E5D /* PlanogramView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanogramView.xib; sourceTree = "<group>"; };
+		2FCC120621D32C4600B08E5D /* PlanogramView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlanogramView.xib; path = Views/PlanogramView/PlanogramView.xib; sourceTree = "<group>"; };
 		2FCC120721D32C4600B08E5D /* PlanogramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanogramView.swift; sourceTree = "<group>"; };
 		2FCC120821D32C4600B08E5D /* ScrollViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewAdapter.swift; sourceTree = "<group>"; };
 		2FCC120921D32C4600B08E5D /* PlanogramTableViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanogramTableViewAdapter.swift; sourceTree = "<group>"; };
