@@ -11,9 +11,9 @@ import Foundation
 public class PlanogramItems {
     
     public var shelfs: [PlanogramShelf] = []
-    public var items: [IPlanogramItem] = []
+    public var items: [PlanogramItem] = []
     
-    public init(items: [IPlanogramItem]) {
+    public init(items: [PlanogramItem]) {
         self.items = items
         
         let numberOfShelfs = items.map { $0.shelf }

@@ -21,7 +21,7 @@ open class ShelfTableCellModel {
         self.itemDetailsSignalObserver = itemDetailsSignalObserver
     }
     
-    public func select(item: IPlanogramItem) {
+    public func select(item: PlanogramItem) {
         self.itemDetailsSignalObserver.send(value: item)
     }
 }

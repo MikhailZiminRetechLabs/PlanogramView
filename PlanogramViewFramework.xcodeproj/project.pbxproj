@@ -19,7 +19,7 @@
 		2FCC120B21D32C4700B08E5D /* PlanogramCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC11F821D32C4600B08E5D /* PlanogramCollectionViewAdapter.swift */; };
 		2FCC120C21D32C4700B08E5D /* PlanogramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC11F921D32C4600B08E5D /* PlanogramViewModel.swift */; };
 		2FCC121121D32C4700B08E5D /* ProductPlanogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC11FF21D32C4600B08E5D /* ProductPlanogramView.swift */; };
-		2FCC121321D32C4700B08E5D /* IPlanogramItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC120221D32C4600B08E5D /* IPlanogramItem.swift */; };
+		2FCC121321D32C4700B08E5D /* PlanogramItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC120221D32C4600B08E5D /* PlanogramItem.swift */; };
 		2FCC121421D32C4700B08E5D /* PlanogramShelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC120321D32C4600B08E5D /* PlanogramShelf.swift */; };
 		2FCC121521D32C4700B08E5D /* IProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC120421D32C4600B08E5D /* IProduct.swift */; };
 		2FCC121721D32C4700B08E5D /* PlanogramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCC120621D32C4600B08E5D /* PlanogramView.xib */; };
@@ -42,7 +42,7 @@
 		2FCC11F821D32C4600B08E5D /* PlanogramCollectionViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanogramCollectionViewAdapter.swift; sourceTree = "<group>"; };
 		2FCC11F921D32C4600B08E5D /* PlanogramViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanogramViewModel.swift; sourceTree = "<group>"; };
 		2FCC11FF21D32C4600B08E5D /* ProductPlanogramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductPlanogramView.swift; sourceTree = "<group>"; };
-		2FCC120221D32C4600B08E5D /* IPlanogramItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPlanogramItem.swift; sourceTree = "<group>"; };
+		2FCC120221D32C4600B08E5D /* PlanogramItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanogramItem.swift; sourceTree = "<group>"; };
 		2FCC120321D32C4600B08E5D /* PlanogramShelf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanogramShelf.swift; sourceTree = "<group>"; };
 		2FCC120421D32C4600B08E5D /* IProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IProduct.swift; sourceTree = "<group>"; };
 		2FCC120621D32C4600B08E5D /* PlanogramView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlanogramView.xib; path = Views/PlanogramView/PlanogramView.xib; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		2FCC120121D32C4600B08E5D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2FCC120221D32C4600B08E5D /* IPlanogramItem.swift */,
+				2FCC120221D32C4600B08E5D /* PlanogramItem.swift */,
 				2FCC120321D32C4600B08E5D /* PlanogramShelf.swift */,
 				2FCC120421D32C4600B08E5D /* IProduct.swift */,
 				2F991CA1221D312F0009C5EA /* PlanogramItems.swift */,
@@ -249,7 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FCC121921D32C4700B08E5D /* ScrollViewAdapter.swift in Sources */,
-				2FCC121321D32C4700B08E5D /* IPlanogramItem.swift in Sources */,
+				2FCC121321D32C4700B08E5D /* PlanogramItem.swift in Sources */,
 				2F6BBB6A221D30ED00B58F1A /* ShelfTableViewCell.swift in Sources */,
 				2FCC121421D32C4700B08E5D /* PlanogramShelf.swift in Sources */,
 				2F991CA2221D312F0009C5EA /* PlanogramItems.swift in Sources */,

@@ -91,7 +91,7 @@ open class PlanogramView: UIView {
         
     }
     
-    open func setupPlanogram(_ items: [IPlanogramItem]) {
+    open func setupPlanogram(_ items: [PlanogramItem]) {
         let planogramItems = PlanogramItems(items: items)
         _model.shelfs.value = planogramItems.shelfs
     }
