@@ -12,11 +12,11 @@ import Result
 
 open class ShelfTableCellModel {
     
-    public let itemDetailsSignal: Signal<IPlanogramItem, NoError>
-    private let itemDetailsSignalObserver: Signal<IPlanogramItem, NoError>.Observer
+    public let itemDetailsSignal: Signal<PlanogramItem, NoError>
+    private let itemDetailsSignalObserver: Signal<PlanogramItem, NoError>.Observer
 
     public init() {
-        let (itemDetailsSignal, itemDetailsSignalObserver) = Signal<IPlanogramItem, NoError>.pipe()
+        let (itemDetailsSignal, itemDetailsSignalObserver) = Signal<PlanogramItem, NoError>.pipe()
         self.itemDetailsSignal = itemDetailsSignal
         self.itemDetailsSignalObserver = itemDetailsSignalObserver
     }

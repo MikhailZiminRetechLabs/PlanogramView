@@ -22,7 +22,7 @@ open class PlanogramView: UIView {
     var scrollViewAdapter: ScrollViewAdapter!
     public var tableViewAdapter: PlanogramTableViewAdapter!
     
-    public let selectedItem = MutableProperty<IPlanogramItem?>(nil)
+    public let selectedItem = MutableProperty<PlanogramItem?>(nil)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

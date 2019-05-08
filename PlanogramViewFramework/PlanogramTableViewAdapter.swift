@@ -22,11 +22,11 @@ open class PlanogramTableViewAdapter: NSObject, UITableViewDelegate, UITableView
     
     let model: PlanogramViewModel
     
-    public let itemDetailsSignal: Signal<IPlanogramItem, NoError>
-    public let itemDetailsSignalObserver: Signal<IPlanogramItem, NoError>.Observer
+    public let itemDetailsSignal: Signal<PlanogramItem, NoError>
+    public let itemDetailsSignalObserver: Signal<PlanogramItem, NoError>.Observer
     
     public init(_ tv: UITableView, model: PlanogramViewModel) {
-        let (itemDetailsSignal, itemDetailsSignalObserver) = Signal<IPlanogramItem, NoError>.pipe()
+        let (itemDetailsSignal, itemDetailsSignalObserver) = Signal<PlanogramItem, NoError>.pipe()
         self.itemDetailsSignal = itemDetailsSignal
         self.itemDetailsSignalObserver = itemDetailsSignalObserver
         

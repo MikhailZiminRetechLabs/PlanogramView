@@ -17,17 +17,17 @@ open class PlanogramCollectionViewAdapter: NSObject, UICollectionViewDelegate, U
     
     public var collectionView: UICollectionView!
     
-    public var items = MutableProperty<[IPlanogramItem]>([])
-    let selectedItem = MutableProperty<IPlanogramItem?>(nil)
+    public var items = MutableProperty<[PlanogramItem]>([])
+    let selectedItem = MutableProperty<PlanogramItem?>(nil)
     private var maxItems = 0
     
-    public let itemDetailsSignal: Signal<IPlanogramItem, NoError>
-    private let itemDetailsSignalObserver: Signal<IPlanogramItem, NoError>.Observer
+    public let itemDetailsSignal: Signal<PlanogramItem, NoError>
+    private let itemDetailsSignalObserver: Signal<PlanogramItem, NoError>.Observer
     
     public init(_ cv: UICollectionView) {
         self.collectionView = cv
         
-        let (itemDetailsSignal, itemDetailsSignalObserver) = Signal<IPlanogramItem, NoError>.pipe()
+        let (itemDetailsSignal, itemDetailsSignalObserver) = Signal<PlanogramItem, NoError>.pipe()
         self.itemDetailsSignal = itemDetailsSignal
         self.itemDetailsSignalObserver = itemDetailsSignalObserver
         
