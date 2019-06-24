@@ -7,87 +7,117 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E00AC36AA65F8109E4EBEC9CFEE83D28 /* Pods-PlanogramViewFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF39B29C4E2CD57458A42A9596F570 /* Pods-PlanogramViewFramework-dummy.m */; };
+		0598C0F0968F969FE6CFE10D98813971 /* Pods-PlanogramViewFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B84A30D0B1AA27BC42905DE71499984D /* Pods-PlanogramViewFramework-dummy.m */; };
+		8B8EF4D00229B09EBB1DB45062041868 /* Pods-PlanogramViewFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 87C30AE346DD15FC05228B78F6706579 /* Pods-PlanogramViewFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1CFBFD34DC46FA05586D3C2D0FA901B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0AFF39B29C4E2CD57458A42A9596F570 /* Pods-PlanogramViewFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PlanogramViewFramework-dummy.m"; sourceTree = "<group>"; };
-		6A24EF54319F94E148FB12A27CD789C0 /* libPods-PlanogramViewFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-PlanogramViewFramework.a"; path = "libPods-PlanogramViewFramework.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C15352BDAD61070666C36E53C25C0AF /* Pods-PlanogramViewFramework-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PlanogramViewFramework-acknowledgements.markdown"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9FA4C519EE21706F39B02DDE5E29D972 /* Pods-PlanogramViewFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PlanogramViewFramework.release.xcconfig"; sourceTree = "<group>"; };
-		ADB27CC6307FAF1D451298F39539B9BF /* Pods-PlanogramViewFramework-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PlanogramViewFramework-resources.sh"; sourceTree = "<group>"; };
-		B625B2E56799317117FCBA6899C3DDB8 /* Pods-PlanogramViewFramework-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PlanogramViewFramework-acknowledgements.plist"; sourceTree = "<group>"; };
-		C5C000F32F4F84C977E7834130A4BBFD /* Pods-PlanogramViewFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PlanogramViewFramework.debug.xcconfig"; sourceTree = "<group>"; };
+		061B7CCCEBBFFAFBB63FFAC144F61D9F /* Pods-PlanogramViewFramework-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PlanogramViewFramework-acknowledgements.plist"; sourceTree = "<group>"; };
+		738BA6DBF6C69E7EEAF820504474BD1E /* Pods-PlanogramViewFramework-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PlanogramViewFramework-acknowledgements.markdown"; sourceTree = "<group>"; };
+		87C30AE346DD15FC05228B78F6706579 /* Pods-PlanogramViewFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PlanogramViewFramework-umbrella.h"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B43A2615C276820DB0FA68A10175A385 /* Pods-PlanogramViewFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PlanogramViewFramework.modulemap"; sourceTree = "<group>"; };
+		B84A30D0B1AA27BC42905DE71499984D /* Pods-PlanogramViewFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PlanogramViewFramework-dummy.m"; sourceTree = "<group>"; };
+		BEB82EC28C06AD9F738B8010C9440052 /* Pods-PlanogramViewFramework-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PlanogramViewFramework-Info.plist"; sourceTree = "<group>"; };
+		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CC875AA779E0B6E912DCEB230CBFEB54 /* Pods-PlanogramViewFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PlanogramViewFramework.release.xcconfig"; sourceTree = "<group>"; };
+		CE5FDF6AC4ED6D250ED33F40BC7CF0C8 /* Pods-PlanogramViewFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PlanogramViewFramework.debug.xcconfig"; sourceTree = "<group>"; };
+		F65C9AF9391253C69783AB2D8063F38E /* Pods_PlanogramViewFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PlanogramViewFramework.framework; path = "Pods-PlanogramViewFramework.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		879D1B80B37D87CD6D14C37A47A1AC67 /* Frameworks */ = {
+		35AF206EAB8B20E2234335E229D6A7C2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1CFBFD34DC46FA05586D3C2D0FA901B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
+		299FE51DA6428FF0C644469324D09B07 /* Pods-PlanogramViewFramework */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		2221C27586ECCEDE548DA3D8CFF71D69 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				717A89A5F112685219AAB2EB0D259DD3 /* Pods-PlanogramViewFramework */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		717A89A5F112685219AAB2EB0D259DD3 /* Pods-PlanogramViewFramework */ = {
-			isa = PBXGroup;
-			children = (
-				8C15352BDAD61070666C36E53C25C0AF /* Pods-PlanogramViewFramework-acknowledgements.markdown */,
-				B625B2E56799317117FCBA6899C3DDB8 /* Pods-PlanogramViewFramework-acknowledgements.plist */,
-				0AFF39B29C4E2CD57458A42A9596F570 /* Pods-PlanogramViewFramework-dummy.m */,
-				ADB27CC6307FAF1D451298F39539B9BF /* Pods-PlanogramViewFramework-resources.sh */,
-				C5C000F32F4F84C977E7834130A4BBFD /* Pods-PlanogramViewFramework.debug.xcconfig */,
-				9FA4C519EE21706F39B02DDE5E29D972 /* Pods-PlanogramViewFramework.release.xcconfig */,
+				B43A2615C276820DB0FA68A10175A385 /* Pods-PlanogramViewFramework.modulemap */,
+				738BA6DBF6C69E7EEAF820504474BD1E /* Pods-PlanogramViewFramework-acknowledgements.markdown */,
+				061B7CCCEBBFFAFBB63FFAC144F61D9F /* Pods-PlanogramViewFramework-acknowledgements.plist */,
+				B84A30D0B1AA27BC42905DE71499984D /* Pods-PlanogramViewFramework-dummy.m */,
+				BEB82EC28C06AD9F738B8010C9440052 /* Pods-PlanogramViewFramework-Info.plist */,
+				87C30AE346DD15FC05228B78F6706579 /* Pods-PlanogramViewFramework-umbrella.h */,
+				CE5FDF6AC4ED6D250ED33F40BC7CF0C8 /* Pods-PlanogramViewFramework.debug.xcconfig */,
+				CC875AA779E0B6E912DCEB230CBFEB54 /* Pods-PlanogramViewFramework.release.xcconfig */,
 			);
 			name = "Pods-PlanogramViewFramework";
 			path = "Target Support Files/Pods-PlanogramViewFramework";
 			sourceTree = "<group>";
 		};
-		786CED1A1936BC5AA17FCC093AB1CD4D /* Products */ = {
+		844F3C8816E078CB0C78EA9E98775D4C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A24EF54319F94E148FB12A27CD789C0 /* libPods-PlanogramViewFramework.a */,
+				F65C9AF9391253C69783AB2D8063F38E /* Pods_PlanogramViewFramework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7DB346D0F39D3F0E887471402A8071AB = {
+		8D68182F8AB55DBDD50182DC29A1473F /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
-				786CED1A1936BC5AA17FCC093AB1CD4D /* Products */,
-				2221C27586ECCEDE548DA3D8CFF71D69 /* Targets Support Files */,
+				299FE51DA6428FF0C644469324D09B07 /* Pods-PlanogramViewFramework */,
 			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				844F3C8816E078CB0C78EA9E98775D4C /* Products */,
+				8D68182F8AB55DBDD50182DC29A1473F /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B055D0CFEA43187E72B03DED11F5662 /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		366FE4667E89A54F4F44B6D834A78CD1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B8EF4D00229B09EBB1DB45062041868 /* Pods-PlanogramViewFramework-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		AA5572FAB119453712BC8226CFF2330F /* Pods-PlanogramViewFramework */ = {
+		DC10D17F29B6DC7F8A7B9A135B1B6519 /* Pods-PlanogramViewFramework */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1E3F6D10E26B9784828DDACDC0DADD81 /* Build configuration list for PBXNativeTarget "Pods-PlanogramViewFramework" */;
+			buildConfigurationList = 2F422C104F33AFF9475644A96B389B55 /* Build configuration list for PBXNativeTarget "Pods-PlanogramViewFramework" */;
 			buildPhases = (
-				E494AA76A8752AA7C045E3DCBAC9CDDD /* Sources */,
-				879D1B80B37D87CD6D14C37A47A1AC67 /* Frameworks */,
+				366FE4667E89A54F4F44B6D834A78CD1 /* Headers */,
+				C068B438C4E50E7B695ACD503C79E125 /* Sources */,
+				35AF206EAB8B20E2234335E229D6A7C2 /* Frameworks */,
+				3A38CE34DA30D3DE2E0FBF67E24B0C92 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -95,48 +125,58 @@
 			);
 			name = "Pods-PlanogramViewFramework";
 			productName = "Pods-PlanogramViewFramework";
-			productReference = 6A24EF54319F94E148FB12A27CD789C0 /* libPods-PlanogramViewFramework.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = F65C9AF9391253C69783AB2D8063F38E /* Pods_PlanogramViewFramework.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 786CED1A1936BC5AA17FCC093AB1CD4D /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 844F3C8816E078CB0C78EA9E98775D4C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AA5572FAB119453712BC8226CFF2330F /* Pods-PlanogramViewFramework */,
+				DC10D17F29B6DC7F8A7B9A135B1B6519 /* Pods-PlanogramViewFramework */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		3A38CE34DA30D3DE2E0FBF67E24B0C92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		E494AA76A8752AA7C045E3DCBAC9CDDD /* Sources */ = {
+		C068B438C4E50E7B695ACD503C79E125 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E00AC36AA65F8109E4EBEC9CFEE83D28 /* Pods-PlanogramViewFramework-dummy.m in Sources */,
+				0598C0F0968F969FE6CFE10D98813971 /* Pods-PlanogramViewFramework-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		08638A96A528B1EC32DE62F8A728389D /* Release */ = {
+		4CE281642D6EE9FAB113046B4B6328A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -168,8 +208,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -188,35 +226,17 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		29FCF23AAD3CBB26F50A82B7AEB12B48 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5C000F32F4F84C977E7834130A4BBFD /* Pods-PlanogramViewFramework.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */ = {
+		6DFA1578582149B7E24AD55CBA30F07A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -248,8 +268,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -270,60 +288,117 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		F1A3F17B330CF8B33C570E959F93E9A5 /* Release */ = {
+		D202B4D654EA2220C063C83467BC95F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9FA4C519EE21706F39B02DDE5E29D972 /* Pods-PlanogramViewFramework.release.xcconfig */;
+			baseConfigurationReference = CC875AA779E0B6E912DCEB230CBFEB54 /* Pods-PlanogramViewFramework.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PlanogramViewFramework/Pods-PlanogramViewFramework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PlanogramViewFramework/Pods-PlanogramViewFramework.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		FD01DF3630DDA80531C1458E1AE350FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE5FDF6AC4ED6D250ED33F40BC7CF0C8 /* Pods-PlanogramViewFramework.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PlanogramViewFramework/Pods-PlanogramViewFramework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PlanogramViewFramework/Pods-PlanogramViewFramework.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1E3F6D10E26B9784828DDACDC0DADD81 /* Build configuration list for PBXNativeTarget "Pods-PlanogramViewFramework" */ = {
+		2F422C104F33AFF9475644A96B389B55 /* Build configuration list for PBXNativeTarget "Pods-PlanogramViewFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				29FCF23AAD3CBB26F50A82B7AEB12B48 /* Debug */,
-				F1A3F17B330CF8B33C570E959F93E9A5 /* Release */,
+				FD01DF3630DDA80531C1458E1AE350FA /* Debug */,
+				D202B4D654EA2220C063C83467BC95F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */,
-				08638A96A528B1EC32DE62F8A728389D /* Release */,
+				6DFA1578582149B7E24AD55CBA30F07A /* Debug */,
+				4CE281642D6EE9FAB113046B4B6328A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

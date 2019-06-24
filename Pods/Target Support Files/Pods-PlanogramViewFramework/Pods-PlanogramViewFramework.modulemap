@@ -1,4 +1,4 @@
-module Pods_PlanogramViewFramework {
+framework module Pods_PlanogramViewFramework {
   umbrella header "Pods-PlanogramViewFramework-umbrella.h"
 
   export *

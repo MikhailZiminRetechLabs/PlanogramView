@@ -10,7 +10,6 @@
 import Foundation
 import UIKit
 import ReactiveSwift
-import Result
 import Kingfisher
 
 open class PlanogramCollectionViewAdapter: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -21,15 +20,13 @@ open class PlanogramCollectionViewAdapter: NSObject, UICollectionViewDelegate, U
     let selectedItem = MutableProperty<PlanogramItem?>(nil)
     private var maxItems = 0
     
-    public let itemDetailsSignal: Signal<PlanogramItem, NoError>
-    private let itemDetailsSignalObserver: Signal<PlanogramItem, NoError>.Observer
+    public let itemDetailsSignal: Signal<PlanogramItem, Never>
+    private let itemDetailsSignalObserver: Signal<PlanogramItem, Never>.Observer
     
     public init(_ cv: UICollectionView) {
         self.collectionView = cv
         
-        let (itemDetailsSignal, itemDetailsSignalObserver) = Signal<PlanogramItem, NoError>.pipe()
-        self.itemDetailsSignal = itemDetailsSignal
-        self.itemDetailsSignalObserver = itemDetailsSignalObserver
+        (itemDetailsSignal, itemDetailsSignalObserver) = Signal<PlanogramItem, Never>.pipe()
         
         super.init()
         

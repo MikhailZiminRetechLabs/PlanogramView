@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E5449FA32FC0A4DA9CA7E22 /* libPods-PlanogramViewFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C69EA43FF21B1A7DBAC5BA6F /* libPods-PlanogramViewFramework.a */; };
 		2F6BBB63221D30C800B58F1A /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6BBB62221D30C800B58F1A /* ItemCollectionViewCell.swift */; };
 		2F6BBB65221D30DC00B58F1A /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6BBB64221D30DC00B58F1A /* ItemCollectionViewCell.xib */; };
 		2F6BBB69221D30ED00B58F1A /* ShelfTableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6BBB66221D30ED00B58F1A /* ShelfTableCellModel.swift */; };
@@ -26,6 +25,7 @@
 		2FCC121821D32C4700B08E5D /* PlanogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC120721D32C4600B08E5D /* PlanogramView.swift */; };
 		2FCC121921D32C4700B08E5D /* ScrollViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC120821D32C4600B08E5D /* ScrollViewAdapter.swift */; };
 		2FCC121A21D32C4700B08E5D /* PlanogramTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC120921D32C4600B08E5D /* PlanogramTableViewAdapter.swift */; };
+		440B2D57A80DE814CAB78ACB /* Pods_PlanogramViewFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3EC055D04044A79E0A487A8 /* Pods_PlanogramViewFramework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +50,7 @@
 		2FCC120821D32C4600B08E5D /* ScrollViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewAdapter.swift; sourceTree = "<group>"; };
 		2FCC120921D32C4600B08E5D /* PlanogramTableViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanogramTableViewAdapter.swift; sourceTree = "<group>"; };
 		4DC6D387252E98B4659F6E07 /* Pods-PlanogramViewFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanogramViewFramework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlanogramViewFramework/Pods-PlanogramViewFramework.debug.xcconfig"; sourceTree = "<group>"; };
-		C69EA43FF21B1A7DBAC5BA6F /* libPods-PlanogramViewFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlanogramViewFramework.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3EC055D04044A79E0A487A8 /* Pods_PlanogramViewFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanogramViewFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF8D468DBC2508CE16247A29 /* Pods-PlanogramViewFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanogramViewFramework.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlanogramViewFramework/Pods-PlanogramViewFramework.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E5449FA32FC0A4DA9CA7E22 /* libPods-PlanogramViewFramework.a in Frameworks */,
+				440B2D57A80DE814CAB78ACB /* Pods_PlanogramViewFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +138,7 @@
 		AA4D8EAA05A7E7FDBF3E6B06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C69EA43FF21B1A7DBAC5BA6F /* libPods-PlanogramViewFramework.a */,
+				C3EC055D04044A79E0A487A8 /* Pods_PlanogramViewFramework.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import ReactiveSwift
-import Result
+//import Result
 
 open class PlanogramTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
     
@@ -22,13 +22,11 @@ open class PlanogramTableViewAdapter: NSObject, UITableViewDelegate, UITableView
     
     let model: PlanogramViewModel
     
-    public let itemDetailsSignal: Signal<PlanogramItem, NoError>
-    public let itemDetailsSignalObserver: Signal<PlanogramItem, NoError>.Observer
+    public let itemDetailsSignal: Signal<PlanogramItem, Never>
+    public let itemDetailsSignalObserver: Signal<PlanogramItem, Never>.Observer
     
     public init(_ tv: UITableView, model: PlanogramViewModel) {
-        let (itemDetailsSignal, itemDetailsSignalObserver) = Signal<PlanogramItem, NoError>.pipe()
-        self.itemDetailsSignal = itemDetailsSignal
-        self.itemDetailsSignalObserver = itemDetailsSignalObserver
+        (itemDetailsSignal, itemDetailsSignalObserver) = Signal<PlanogramItem, Never>.pipe()
         
         self.model = model
         self.tableView = tv

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PlanogramView"
-  s.version      = "0.19.0"
+  s.version      = "0.21.0"
   s.summary      = "Framework for planogram"
 
   # This description is used to generate tags and improve search results.
@@ -142,6 +142,5 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency 'ReactiveSwift'
   s.dependency 'Kingfisher'
-  s.dependency 'Result'
 
 end

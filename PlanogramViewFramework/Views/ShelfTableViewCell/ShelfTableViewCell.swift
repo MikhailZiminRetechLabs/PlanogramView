@@ -9,7 +9,6 @@
 import UIKit
 import Kingfisher
 import ReactiveSwift
-import Result
 
 open class ShelfTableViewCell: UITableViewCell {
 
