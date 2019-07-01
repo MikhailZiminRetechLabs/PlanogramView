@@ -14,11 +14,7 @@ import ReactiveSwift
 open class PlanogramTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     public var tableView: UITableView!
-    
-    var cellHeight: CGFloat = 100
-    var maxItemsShelfs = 0
-    var totalElements = 0
-    public var tableHeight = MutableProperty<CGFloat>(0)
+    public var tableSize = MutableProperty<CGSize>(.zero)
     
     let model: PlanogramViewModel
     
@@ -36,7 +32,7 @@ open class PlanogramTableViewAdapter: NSObject, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.separatorStyle = .singleLine
+        tableView.separatorStyle = .none
         tableView.tableFooterView = UIView(frame: .zero)
         
         if let path = Bundle(for: ShelfTableViewCell.self).path(forResource: "PlanogramView", ofType: "bundle") {
@@ -51,45 +47,8 @@ open class PlanogramTableViewAdapter: NSObject, UITableViewDelegate, UITableView
         model.shelfs.signal.observeValues { [weak self] in
             guard let `self` = self else { return }
             
-            self.totalElements = 0
-            self.maxItemsShelfs = 0
-            
-            for shelf in $0 {
-                var maxItems = 0
-                
-                for item in shelf.items {
-                    if maxItems < item.verticalFacings {
-                        maxItems = item.verticalFacings
-                    }
-                }
-                if self.maxItemsShelfs < shelf.items.count {
-                    self.maxItemsShelfs = shelf.items.count
-                }
-                
-                self.totalElements += maxItems
-            }
-            
-            if self.maxItemsShelfs == 0 {
-                self.maxItemsShelfs = 1
-            }
-            
-            if self.totalElements == 0 {
-                self.totalElements = 1
-            }
-            
-            self.cellHeight = UIScreen.main.bounds.width / CGFloat(self.maxItemsShelfs)
-            
-            let cellHeightRatioScreen = (UIScreen.main.bounds.height - 100) / CGFloat(self.totalElements)
-            if cellHeightRatioScreen < self.cellHeight {
-                self.cellHeight = cellHeightRatioScreen
-            }
-            
-            if self.cellHeight > 150 {
-                self.cellHeight = 150
-            }
-            
-            self.tableHeight.value = CGFloat(self.totalElements) * self.cellHeight
-            
+            let planogramSizeService = PlanogramSizeService()
+            self.tableSize.value = planogramSizeService.getPlanogramSize(by: $0)
             self.tableView.reloadData()
         }
     }
@@ -99,15 +58,12 @@ open class PlanogramTableViewAdapter: NSObject, UITableViewDelegate, UITableView
     }
     
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var maxItems = 0
+        let countsProductsInShelf = model.shelfs.value.map { $0.items.map { item in item.verticalFacings }.max() ?? 0 }
+        let countProductsInColumn = countsProductsInShelf.reduce(0) { $0 + $1 }
+        let cellHeight = tableView.frame.height / CGFloat(countProductsInColumn)
         
         let shelf = model.shelfs.value[indexPath.row]
-        for item in shelf.items {
-            if maxItems < item.verticalFacings {
-                maxItems = item.verticalFacings
-            }
-        }
-        
+        let maxItems = shelf.items.map { $0.verticalFacings }.max() ?? 0
         let height = CGFloat(maxItems) * cellHeight
         
         return height

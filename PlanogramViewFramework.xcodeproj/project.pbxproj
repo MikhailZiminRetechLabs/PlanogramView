@@ -13,6 +13,7 @@
 		2F6BBB6A221D30ED00B58F1A /* ShelfTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6BBB67221D30ED00B58F1A /* ShelfTableViewCell.swift */; };
 		2F6BBB6B221D30ED00B58F1A /* ShelfTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6BBB68221D30ED00B58F1A /* ShelfTableViewCell.xib */; };
 		2F991CA2221D312F0009C5EA /* PlanogramItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F991CA1221D312F0009C5EA /* PlanogramItems.swift */; };
+		2FA6E59E22C9F93E00F2BE0C /* PlanogramSizeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA6E59D22C9F93E00F2BE0C /* PlanogramSizeService.swift */; };
 		2FCC11F121D32BF600B08E5D /* PlanogramViewFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FCC11EF21D32BF600B08E5D /* PlanogramViewFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FCC120A21D32C4700B08E5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FCC11F721D32C4600B08E5D /* Assets.xcassets */; };
 		2FCC120B21D32C4700B08E5D /* PlanogramCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC11F821D32C4600B08E5D /* PlanogramCollectionViewAdapter.swift */; };
@@ -35,6 +36,7 @@
 		2F6BBB67221D30ED00B58F1A /* ShelfTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShelfTableViewCell.swift; path = ShelfTableViewCell/ShelfTableViewCell.swift; sourceTree = "<group>"; };
 		2F6BBB68221D30ED00B58F1A /* ShelfTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShelfTableViewCell.xib; path = ShelfTableViewCell/ShelfTableViewCell.xib; sourceTree = "<group>"; };
 		2F991CA1221D312F0009C5EA /* PlanogramItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanogramItems.swift; sourceTree = "<group>"; };
+		2FA6E59D22C9F93E00F2BE0C /* PlanogramSizeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanogramSizeService.swift; sourceTree = "<group>"; };
 		2FCC11EC21D32BF600B08E5D /* PlanogramViewFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlanogramViewFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FCC11EF21D32BF600B08E5D /* PlanogramViewFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlanogramViewFramework.h; sourceTree = "<group>"; };
 		2FCC11F021D32BF600B08E5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,17 +89,18 @@
 		2FCC11EE21D32BF600B08E5D /* PlanogramViewFramework */ = {
 			isa = PBXGroup;
 			children = (
-				2FCC11F721D32C4600B08E5D /* Assets.xcassets */,
-				2FCC120121D32C4600B08E5D /* Model */,
-				2FCC11F821D32C4600B08E5D /* PlanogramCollectionViewAdapter.swift */,
-				2FCC120921D32C4600B08E5D /* PlanogramTableViewAdapter.swift */,
-				2FCC120721D32C4600B08E5D /* PlanogramView.swift */,
-				2FCC120621D32C4600B08E5D /* PlanogramView.xib */,
-				2FCC11F921D32C4600B08E5D /* PlanogramViewModel.swift */,
-				2FCC120821D32C4600B08E5D /* ScrollViewAdapter.swift */,
-				2FCC11FA21D32C4600B08E5D /* Views */,
 				2FCC11EF21D32BF600B08E5D /* PlanogramViewFramework.h */,
 				2FCC11F021D32BF600B08E5D /* Info.plist */,
+				2FCC11F821D32C4600B08E5D /* PlanogramCollectionViewAdapter.swift */,
+				2FA6E59D22C9F93E00F2BE0C /* PlanogramSizeService.swift */,
+				2FCC120921D32C4600B08E5D /* PlanogramTableViewAdapter.swift */,
+				2FCC120721D32C4600B08E5D /* PlanogramView.swift */,
+				2FCC11F921D32C4600B08E5D /* PlanogramViewModel.swift */,
+				2FCC120821D32C4600B08E5D /* ScrollViewAdapter.swift */,
+				2FCC11F721D32C4600B08E5D /* Assets.xcassets */,
+				2FCC120621D32C4600B08E5D /* PlanogramView.xib */,
+				2FCC120121D32C4600B08E5D /* Model */,
+				2FCC11FA21D32C4600B08E5D /* Views */,
 			);
 			path = PlanogramViewFramework;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				2FCC121321D32C4700B08E5D /* PlanogramItem.swift in Sources */,
 				2F6BBB6A221D30ED00B58F1A /* ShelfTableViewCell.swift in Sources */,
 				2FCC121421D32C4700B08E5D /* PlanogramShelf.swift in Sources */,
+				2FA6E59E22C9F93E00F2BE0C /* PlanogramSizeService.swift in Sources */,
 				2F991CA2221D312F0009C5EA /* PlanogramItems.swift in Sources */,
 				2FCC121A21D32C4700B08E5D /* PlanogramTableViewAdapter.swift in Sources */,
 				2FCC121121D32C4700B08E5D /* ProductPlanogramView.swift in Sources */,

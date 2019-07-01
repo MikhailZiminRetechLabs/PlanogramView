@@ -16,6 +16,8 @@ open class PlanogramView: UIView {
     @IBOutlet public weak var tableView: UITableView!
     @IBOutlet public weak var tableHeightConstraint: NSLayoutConstraint!
     @IBOutlet public weak var tableTopConstraint: NSLayoutConstraint!
+    @IBOutlet public weak var tableWidthConstraint: NSLayoutConstraint!
+    @IBOutlet public weak var tableLeadingConstraint: NSLayoutConstraint!
     
     let _model = PlanogramViewModel()
     
@@ -64,31 +66,65 @@ open class PlanogramView: UIView {
         scrollViewAdapter.zoomViewFrameHeight.signal.observeValues { [weak self] in
             guard let `self` = self else { return }
             
-            let const = (self.scrollView.frame.height - $0) / 2
-            if const >= 0 {
-                self.tableTopConstraint.constant = const
+            let heightConst = (self.scrollView.frame.height - $0) / 2
+            if heightConst >= 0 {
+                self.tableTopConstraint.constant = heightConst
             } else {
                 self.tableTopConstraint.constant = 0
             }
         }
         
-        tableViewAdapter.tableHeight.signal.observeValues { [weak self] in
+        scrollViewAdapter.zoomViewFrameWidth.signal.observeValues { [weak self] in
             guard let `self` = self else { return }
             
-            self.tableHeightConstraint.constant = $0
-            let const = (self.scrollView.frame.height - $0) / 2
-            if const >= 0 {
-                self.tableTopConstraint.constant = const
+            let widthConst = (self.scrollView.frame.width - $0) / 2
+            if widthConst >= 0 {
+                self.tableLeadingConstraint.constant = widthConst
             } else {
-                self.tableTopConstraint.constant = 0
+                self.tableLeadingConstraint.constant = 0
             }
-            self.layoutIfNeeded()
+        }
+        
+        tableViewAdapter.tableSize.signal.observeValues { [weak self] in
+            guard let `self` = self else { return }
+            
+            let scrollViewFrameRatio = self.scrollView.frame.width / self.scrollView.frame.height
+            let tableViewFrameRation = $0.width / $0.height
+            let isHorizontal = scrollViewFrameRatio < tableViewFrameRation
+            if isHorizontal {
+                let horizontalRatio = $0.width / self.scrollView.frame.width
+                let tableViewActualHeight = $0.height / horizontalRatio
+                self.tableHeightConstraint.constant = tableViewActualHeight
+                let const = (self.scrollView.frame.height - tableViewActualHeight) / 2
+                if const >= 0 {
+                    self.tableTopConstraint.constant = const
+                } else {
+                    self.tableTopConstraint.constant = 0
+                }
+                
+                self.tableWidthConstraint.constant = self.scrollView.frame.width
+                self.scrollView.contentSize = CGSize(width: self.scrollView.contentSize.width, height: tableViewActualHeight)
+                self.layoutIfNeeded()
+            } else {
+                let verticalRatio = $0.height / self.scrollView.frame.height
+                let tableViewActualWidth = $0.width / verticalRatio
+                self.tableWidthConstraint.constant = tableViewActualWidth
+                let const = (self.scrollView.frame.width - tableViewActualWidth) / 2
+                if const >= 0 {
+                    self.tableLeadingConstraint.constant = const
+                } else {
+                    self.tableLeadingConstraint.constant = 0
+                }
+                
+                self.tableHeightConstraint.constant = self.scrollView.frame.height
+                self.scrollView.contentSize = CGSize(width: tableViewActualWidth, height: self.scrollView.contentSize.height)
+                self.layoutIfNeeded()
+            }
         }
         
         tableViewAdapter.itemDetailsSignal.observeValues { [weak self] in
             self?.selectedItem.value = $0
         }
-        
     }
     
     open func setupPlanogram(_ items: [PlanogramItem]) {
