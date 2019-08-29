@@ -41,15 +41,17 @@ open class PlanogramCollectionViewAdapter: NSObject, UICollectionViewDelegate, U
         } else {
             print("Could not create a path to the bundle")
         }
-
+        
         items.signal.observeValues { [weak self] in
+            guard let `self` = self else { return }
+            self.maxItems = 0
             for item in $0 {
-                if self!.maxItems < item.verticalFacings {
-                    self?.maxItems = item.verticalFacings
+                if self.maxItems < item.verticalFacings {
+                    self.maxItems = item.verticalFacings
                 }
             }
             
-            self?.collectionView.reloadData()
+            self.collectionView.reloadData()
         }
     }
     
