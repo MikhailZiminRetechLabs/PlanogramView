@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ItemCollectionViewCell: UICollectionViewCell {
+open class ItemCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet public weak var stackView: UIStackView!
     
