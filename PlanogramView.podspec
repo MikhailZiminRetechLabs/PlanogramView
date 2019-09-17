@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PlanogramView"
-  s.version      = "0.25.0"
+  s.version      = "0.26.0"
   s.summary      = "Framework for planogram"
 
   # This description is used to generate tags and improve search results.

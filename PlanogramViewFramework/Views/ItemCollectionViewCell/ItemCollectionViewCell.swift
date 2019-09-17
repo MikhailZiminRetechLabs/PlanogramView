@@ -12,7 +12,7 @@ open class ItemCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet public weak var stackView: UIStackView!
     
-    override public func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         
         stackView.axis = .vertical
@@ -20,7 +20,7 @@ open class ItemCollectionViewCell: UICollectionViewCell {
         stackView.distribution = .fillEqually
     }
     
-    override public func prepareForReuse() {
+    override open func prepareForReuse() {
         super.prepareForReuse()
         
         for subview in stackView.arrangedSubviews {
